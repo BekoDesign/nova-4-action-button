@@ -193,7 +193,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     Loading: _Loading__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   mixins: [laravel_nova__WEBPACK_IMPORTED_MODULE_0__.FormField, laravel_nova__WEBPACK_IMPORTED_MODULE_0__.HandlesValidationErrors],
-  props: _objectSpread(_objectSpread({}, mapProps(['resourceName', 'viaResource', 'viaResourceId', 'viaRelationship'])), {}, {
+  props: _objectSpread(_objectSpread({}, (0,laravel_nova__WEBPACK_IMPORTED_MODULE_0__.mapProps)(['resourceName', 'viaResource', 'viaResourceId', 'viaRelationship'])), {}, {
     resourceName: String,
     field: Object,
     resource: {},

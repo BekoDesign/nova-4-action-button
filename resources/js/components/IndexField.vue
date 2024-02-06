@@ -23,6 +23,7 @@
 import {
 	FormField,
 	HandlesValidationErrors,
+	mapProps
 } from 'laravel-nova';
 
 import Loading from './Loading';
