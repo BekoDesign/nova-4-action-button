@@ -4,7 +4,7 @@
 			:class="{ hidden: hidden }"
 			:disabled="disabled"
 			:style="`background-color: ${buttonColor} !important`"
-			@click.stop.prevent="openConfirmationModal"
+			@click.stop.prevent="executeAction"
 		>
 			<loading
 				v-if="showLoading"
@@ -16,22 +16,6 @@
 				v-if="svg"
 			/>
 		</DefaultButton>
-
-		<!-- Action Confirmation Modal -->
-		<component
-			:is="selectedAction?.component"
-			v-if="confirmActionModalOpened"
-			id="confirm-action-modal"
-			class="text-left"
-			:working="working"
-			:selected-resources="selectedResources"
-			:resource-name="resourceName"
-			:action="selectedAction"
-			:errors="errors"
-			:show="confirmActionModalOpened"
-			@confirm="executeAction"
-			@close="closeConfirmationModal"
-		/>
 	</div>
 </template>
 

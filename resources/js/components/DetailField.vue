@@ -5,7 +5,7 @@
 				class="btn btn-default btn-primary flex items-center justify-center"
 				:disabled="field.readonly"
 				:style="`background-color: ${field.buttonColor} !important`"
-				@click="confirmActionModalOpened = true"
+				@click="executeAction"
 			>
 				<span>{{ buttonText }}</span>
 				<component
@@ -13,22 +13,6 @@
 					v-if="svg"
 				/>
 			</DefaultButton>
-
-			<!-- Action Confirmation Modal -->
-			<component
-				:is="selectedAction?.component"
-				v-if="confirmActionModalOpened"
-				id="confirm-action-modal"
-				class="text-left"
-				:working="working"
-				:selected-resources="selectedResources"
-				:resource-name="resourceName"
-				:action="selectedAction"
-				:errors="errors"
-				:show="confirmActionModalOpened"
-				@confirm="executeAction"
-				@close="closeConfirmationModal"
-			/>
 		</template>
 	</PanelItem>
 </template>
