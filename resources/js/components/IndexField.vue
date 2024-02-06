@@ -36,6 +36,12 @@ export default {
 		HandlesValidationErrors,
 	],
 	props: {
+    ...mapProps([
+        'resourceName',
+        'viaResource',
+        'viaResourceId',
+        'viaRelationship',
+    ]),
 		resourceName: String,
 		field: Object,
 		resource: {},
@@ -76,9 +82,9 @@ export default {
 				search: this.queryString.currentSearch,
 				filters: this.queryString.encodedFilters,
 				trashed: this.queryString.currentTrashed,
-				viaResource: this.queryString.viaResource,
-				viaResourceId: this.queryString.viaResourceId,
-				viaRelationship: this.queryString.viaRelationship,
+          viaResource: this.viaResource || this.queryString.viaResource,
+          viaResourceId: this.viaResourceId || this.queryString.viaResourceId,
+          viaRelationship: this.viaRelationship || this.queryString.viaRelationship,
 			};
 		},
 
