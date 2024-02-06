@@ -27,6 +27,7 @@ import {
 } from 'laravel-nova';
 
 import Loading from './Loading';
+import _ from 'lodash';
 
 export default {
 	components: {

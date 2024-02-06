@@ -19,6 +19,7 @@
 
 <script>
 import { Errors, FormField, HandlesValidationErrors, mapProps } from 'laravel-nova';
+import _ from 'lodash';
 
 export default {
 	mixins: [FormField, HandlesValidationErrors],
@@ -133,8 +134,8 @@ export default {
 		},
 
 		/**
-         * Gather the action FormData for the given action.
-         */
+     * Gather the action FormData for the given action.
+     */
 		actionFormData() {
 			return _.tap(new FormData(), (formData) => {
 				formData.append('resources', this.selectedResources);
